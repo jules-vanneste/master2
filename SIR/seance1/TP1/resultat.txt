@@ -1,0 +1,20 @@
+*Vertices 9
+1 "Jacques"
+2 "Jean"
+3 "Richard"
+4 "Élisabeth"
+5 "Pierre"
+6 "Paul"
+7 "Édouard"
+8 "Claire"
+9 "Justine"
+*Matrix
+1 1 0 0 0 0 0 0 0 
+1 1 0 1 0 0 0 0 0 
+0 0 1 0 1 0 1 0 0 
+0 1 0 1 0 0 0 0 0 
+0 0 1 0 1 0 1 0 0 
+0 0 0 0 0 1 0 1 0 
+0 0 1 0 1 0 1 0 0 
+0 0 0 0 0 1 0 1 0 
+0 0 0 0 0 0 0 0 1 

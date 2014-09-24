@@ -24,4 +24,13 @@ public class Theme {
     public void setName(String name) {
         this.name = name;
     }
+    
+    @Override
+    public boolean equals(Object o){
+        if (this.getClass() != o.getClass()) {
+            return false;
+        }
+        Theme other = (Theme) o;
+        return (this.name.compareTo(other.getName()) == 0);
+    }
 }

@@ -10,8 +10,6 @@ import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
-import java.util.ArrayList;
-import java.util.List;
 
 /**
  *
@@ -25,13 +23,7 @@ public class TP1 {
     public static void main(String[] args) {
         String infos[];
         String fichier = "log.txt";
-        List<User> users = new ArrayList();
-        List<Theme> themes = new ArrayList();
-        themes.add(new Theme("Photo-video"));
-        themes.add(new Theme("informatique"));
-        themes.add(new Theme("jardinage"));
-        themes.add(new Theme("sport"));
-        themes.add(new Theme("bricolage"));
+        Dictionnaire dictionnaire = new Dictionnaire();
         
         try {
             InputStream ips = new FileInputStream(fichier);
@@ -41,24 +33,42 @@ public class TP1 {
             while ((ligne = br.readLine()) != null) {
                 System.out.println(ligne);
                 infos = ligne.split(";");
-                User u = null;
-                for(User u1 : users){
-                    if(u.getName().compareTo(infos[1]) == 0){
-                        u = u1; 
-                    }
-                }
-                if (u == null){
-                    u = new User(infos[1]);
-                    users.add(u);
-                }
-                for(Theme t1 : themes){
-                    Theme t = new Theme(infos[2]);
-                }
+                User u = dictionnaire.addUserIfNonExist(infos[1]);
+                Theme t = dictionnaire.addThemeIfNonExist(infos[2]);
+                dictionnaire.addOrIncrementeLiaisonIfNonExist(u, t);
             }
             br.close();
         } catch (IOException e) {
             System.out.println(e.toString());
         }
+        
+        Liaison l = null;
+        System.out.print("\t\t");
+        for(Theme t : dictionnaire.getThemes()){
+            System.out.print(t.getName());
+            System.out.print("\t");
+        }
+        System.out.println("");
+        for(User u : dictionnaire.getUsers()){
+            System.out.print(u.getName());
+            if(u.getName().length() < 8){
+                System.out.print("\t");
+            }
+            System.out.print("\t");
+            for(Theme t : dictionnaire.getThemes()){
+                if((l = dictionnaire.getLiaison(u, t)) != null){
+                    System.out.print(l.getCpt());
+                }
+                else{
+                    System.out.print("0");
+                }
+                System.out.print("\t\t");
+            }
+            System.out.println();
+        }
+        
+        dictionnaire.matriceDistanceEntreUsager();
+        dictionnaire.ecrireMatriceDistanceEntreUsagerFichier("resultat.txt");
     }
 
 }

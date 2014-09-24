@@ -14,13 +14,11 @@ import java.util.List;
  */
 public class User {
     private String name;
-    private List<Theme> themes;
     
     public User(String name){
         this.name = name;
-        this.themes = new ArrayList<>();
     }
-
+    
     public String getName() {
         return name;
     }
@@ -29,15 +27,12 @@ public class User {
         this.name = name;
     }
     
-    public void addTheme(Theme t){
-        this.themes.add(t);
-    }
-
-    public List<Theme> getThemes() {
-        return themes;
-    }
-
-    public void setThemes(List<Theme> themes) {
-        this.themes = themes;
+    @Override
+    public boolean equals(Object o){
+        if (this.getClass() != o.getClass()) {
+            return false;
+        }
+        User other = (User) o;
+        return (this.name.compareTo(other.getName()) == 0);
     }
 }
