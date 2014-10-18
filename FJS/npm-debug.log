@@ -1,0 +1,248 @@
+0 info it worked if it ends with ok
+1 verbose cli [ 'node',
+1 verbose cli   '/usr/local/bin/npm',
+1 verbose cli   'install',
+1 verbose cli   'grunt-contrib-connect',
+1 verbose cli   'grunt-contrib-clean',
+1 verbose cli   'grunt-contrib-contrib',
+1 verbose cli   '--save' ]
+2 info using npm@1.4.28
+3 info using node@v0.10.32
+4 warn package.json FJS@1.0.0 No description
+5 warn package.json FJS@1.0.0 No repository field.
+6 warn package.json FJS@1.0.0 No README data
+7 verbose readDependencies using package.json deps
+8 verbose cache add [ 'grunt-contrib-connect', null ]
+9 verbose cache add name=undefined spec="grunt-contrib-connect" args=["grunt-contrib-connect",null]
+10 verbose parsed url { protocol: null,
+10 verbose parsed url   slashes: null,
+10 verbose parsed url   auth: null,
+10 verbose parsed url   host: null,
+10 verbose parsed url   port: null,
+10 verbose parsed url   hostname: null,
+10 verbose parsed url   hash: null,
+10 verbose parsed url   search: null,
+10 verbose parsed url   query: null,
+10 verbose parsed url   pathname: 'grunt-contrib-connect',
+10 verbose parsed url   path: 'grunt-contrib-connect',
+10 verbose parsed url   href: 'grunt-contrib-connect' }
+11 verbose cache add [ 'grunt-contrib-clean', null ]
+12 verbose cache add name=undefined spec="grunt-contrib-clean" args=["grunt-contrib-clean",null]
+13 verbose parsed url { protocol: null,
+13 verbose parsed url   slashes: null,
+13 verbose parsed url   auth: null,
+13 verbose parsed url   host: null,
+13 verbose parsed url   port: null,
+13 verbose parsed url   hostname: null,
+13 verbose parsed url   hash: null,
+13 verbose parsed url   search: null,
+13 verbose parsed url   query: null,
+13 verbose parsed url   pathname: 'grunt-contrib-clean',
+13 verbose parsed url   path: 'grunt-contrib-clean',
+13 verbose parsed url   href: 'grunt-contrib-clean' }
+14 verbose cache add [ 'grunt-contrib-contrib', null ]
+15 verbose cache add name=undefined spec="grunt-contrib-contrib" args=["grunt-contrib-contrib",null]
+16 verbose parsed url { protocol: null,
+16 verbose parsed url   slashes: null,
+16 verbose parsed url   auth: null,
+16 verbose parsed url   host: null,
+16 verbose parsed url   port: null,
+16 verbose parsed url   hostname: null,
+16 verbose parsed url   hash: null,
+16 verbose parsed url   search: null,
+16 verbose parsed url   query: null,
+16 verbose parsed url   pathname: 'grunt-contrib-contrib',
+16 verbose parsed url   path: 'grunt-contrib-contrib',
+16 verbose parsed url   href: 'grunt-contrib-contrib' }
+17 silly lockFile a0cb9c83-grunt-contrib-connect grunt-contrib-connect
+18 verbose lock grunt-contrib-connect /Users/jules/.npm/a0cb9c83-grunt-contrib-connect.lock
+19 silly lockFile 862f7e58-grunt-contrib-clean grunt-contrib-clean
+20 verbose lock grunt-contrib-clean /Users/jules/.npm/862f7e58-grunt-contrib-clean.lock
+21 silly lockFile 8928fcfc-grunt-contrib-contrib grunt-contrib-contrib
+22 verbose lock grunt-contrib-contrib /Users/jules/.npm/8928fcfc-grunt-contrib-contrib.lock
+23 silly lockFile a0cb9c83-grunt-contrib-connect grunt-contrib-connect
+24 silly lockFile a0cb9c83-grunt-contrib-connect grunt-contrib-connect
+25 silly lockFile 862f7e58-grunt-contrib-clean grunt-contrib-clean
+26 silly lockFile 862f7e58-grunt-contrib-clean grunt-contrib-clean
+27 silly lockFile 8928fcfc-grunt-contrib-contrib grunt-contrib-contrib
+28 silly lockFile 8928fcfc-grunt-contrib-contrib grunt-contrib-contrib
+29 verbose addNamed [ 'grunt-contrib-connect', '' ]
+30 verbose addNamed [ null, '*' ]
+31 silly lockFile 8d414d07-grunt-contrib-connect grunt-contrib-connect@
+32 verbose lock grunt-contrib-connect@ /Users/jules/.npm/8d414d07-grunt-contrib-connect.lock
+33 verbose addNamed [ 'grunt-contrib-clean', '' ]
+34 verbose addNamed [ null, '*' ]
+35 silly lockFile 8bff91c3-grunt-contrib-clean grunt-contrib-clean@
+36 verbose lock grunt-contrib-clean@ /Users/jules/.npm/8bff91c3-grunt-contrib-clean.lock
+37 verbose addNamed [ 'grunt-contrib-contrib', '' ]
+38 verbose addNamed [ null, '*' ]
+39 silly lockFile e4626b14-grunt-contrib-contrib grunt-contrib-contrib@
+40 verbose lock grunt-contrib-contrib@ /Users/jules/.npm/e4626b14-grunt-contrib-contrib.lock
+41 silly addNameRange { name: 'grunt-contrib-connect', range: '*', hasData: false }
+42 silly addNameRange { name: 'grunt-contrib-clean', range: '*', hasData: false }
+43 verbose request where is /grunt-contrib-clean
+44 verbose request registry https://registry.npmjs.org/
+45 verbose request id 539640ed1b74cd9d
+46 verbose url raw /grunt-contrib-clean
+47 verbose url resolving [ 'https://registry.npmjs.org/', './grunt-contrib-clean' ]
+48 verbose url resolved https://registry.npmjs.org/grunt-contrib-clean
+49 verbose request where is https://registry.npmjs.org/grunt-contrib-clean
+50 info trying registry request attempt 1 at 17:23:25
+51 http GET https://registry.npmjs.org/grunt-contrib-clean
+52 silly addNameRange { name: 'grunt-contrib-contrib', range: '*', hasData: false }
+53 verbose request where is /grunt-contrib-contrib
+54 verbose request registry https://registry.npmjs.org/
+55 verbose url raw /grunt-contrib-contrib
+56 verbose url resolving [ 'https://registry.npmjs.org/', './grunt-contrib-contrib' ]
+57 verbose url resolved https://registry.npmjs.org/grunt-contrib-contrib
+58 verbose request where is https://registry.npmjs.org/grunt-contrib-contrib
+59 info trying registry request attempt 1 at 17:23:25
+60 http GET https://registry.npmjs.org/grunt-contrib-contrib
+61 verbose request where is /grunt-contrib-connect
+62 verbose request registry https://registry.npmjs.org/
+63 verbose url raw /grunt-contrib-connect
+64 verbose url resolving [ 'https://registry.npmjs.org/', './grunt-contrib-connect' ]
+65 verbose url resolved https://registry.npmjs.org/grunt-contrib-connect
+66 verbose request where is https://registry.npmjs.org/grunt-contrib-connect
+67 info trying registry request attempt 1 at 17:23:25
+68 verbose etag "8M3PWZ6KKERVGAJXPJFTFL5PQ"
+69 http GET https://registry.npmjs.org/grunt-contrib-connect
+70 http 304 https://registry.npmjs.org/grunt-contrib-connect
+71 silly registry.get cb [ 304,
+71 silly registry.get   { date: 'Wed, 15 Oct 2014 15:23:23 GMT',
+71 silly registry.get     server: 'Apache',
+71 silly registry.get     via: '1.1 varnish',
+71 silly registry.get     'last-modified': 'Wed, 15 Oct 2014 15:23:23 GMT',
+71 silly registry.get     'cache-control': 'max-age=60',
+71 silly registry.get     etag: '"8M3PWZ6KKERVGAJXPJFTFL5PQ"',
+71 silly registry.get     age: '59',
+71 silly registry.get     'x-served-by': 'cache-fra1237-FRA',
+71 silly registry.get     'x-cache': 'HIT',
+71 silly registry.get     'x-cache-hits': '1',
+71 silly registry.get     'x-timer': 'S1413386603.073293,VS0,VE0',
+71 silly registry.get     vary: 'Accept',
+71 silly registry.get     'content-length': '0',
+71 silly registry.get     'keep-alive': 'timeout=10, max=50',
+71 silly registry.get     connection: 'Keep-Alive' } ]
+72 verbose etag https://registry.npmjs.org/grunt-contrib-connect from cache
+73 silly addNameRange number 2 { name: 'grunt-contrib-connect', range: '*', hasData: true }
+74 silly addNameRange versions [ 'grunt-contrib-connect',
+74 silly addNameRange   [ '0.1.0',
+74 silly addNameRange     '0.1.1',
+74 silly addNameRange     '0.1.2',
+74 silly addNameRange     '0.2.0',
+74 silly addNameRange     '0.3.0',
+74 silly addNameRange     '0.4.0',
+74 silly addNameRange     '0.4.1',
+74 silly addNameRange     '0.4.2',
+74 silly addNameRange     '0.5.0',
+74 silly addNameRange     '0.6.0',
+74 silly addNameRange     '0.7.0',
+74 silly addNameRange     '0.7.1',
+74 silly addNameRange     '0.8.0',
+74 silly addNameRange     '0.1.1-rc6' ] ]
+75 verbose addNamed [ 'grunt-contrib-connect', '0.8.0' ]
+76 verbose addNamed [ '0.8.0', '0.8.0' ]
+77 silly lockFile 526ed901-grunt-contrib-connect-0-8-0 grunt-contrib-connect@0.8.0
+78 verbose lock grunt-contrib-connect@0.8.0 /Users/jules/.npm/526ed901-grunt-contrib-connect-0-8-0.lock
+79 silly lockFile 526ed901-grunt-contrib-connect-0-8-0 grunt-contrib-connect@0.8.0
+80 silly lockFile 526ed901-grunt-contrib-connect-0-8-0 grunt-contrib-connect@0.8.0
+81 silly lockFile 8d414d07-grunt-contrib-connect grunt-contrib-connect@
+82 silly lockFile 8d414d07-grunt-contrib-connect grunt-contrib-connect@
+83 http 404 https://registry.npmjs.org/grunt-contrib-contrib
+84 verbose headers { date: 'Wed, 15 Oct 2014 15:23:23 GMT',
+84 verbose headers   server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
+84 verbose headers   'content-type': 'application/json',
+84 verbose headers   'cache-control': 'max-age=0',
+84 verbose headers   'content-length': '52',
+84 verbose headers   'accept-ranges': 'bytes',
+84 verbose headers   via: '1.1 varnish',
+84 verbose headers   age: '0',
+84 verbose headers   'x-served-by': 'cache-fra1231-FRA',
+84 verbose headers   'x-cache': 'MISS',
+84 verbose headers   'x-cache-hits': '0',
+84 verbose headers   'x-timer': 'S1413386602.996649,VS0,VE178',
+84 verbose headers   'keep-alive': 'timeout=10, max=50',
+84 verbose headers   connection: 'Keep-Alive' }
+85 silly registry.get cb [ 404,
+85 silly registry.get   { date: 'Wed, 15 Oct 2014 15:23:23 GMT',
+85 silly registry.get     server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
+85 silly registry.get     'content-type': 'application/json',
+85 silly registry.get     'cache-control': 'max-age=0',
+85 silly registry.get     'content-length': '52',
+85 silly registry.get     'accept-ranges': 'bytes',
+85 silly registry.get     via: '1.1 varnish',
+85 silly registry.get     age: '0',
+85 silly registry.get     'x-served-by': 'cache-fra1231-FRA',
+85 silly registry.get     'x-cache': 'MISS',
+85 silly registry.get     'x-cache-hits': '0',
+85 silly registry.get     'x-timer': 'S1413386602.996649,VS0,VE178',
+85 silly registry.get     'keep-alive': 'timeout=10, max=50',
+85 silly registry.get     connection: 'Keep-Alive' } ]
+86 silly lockFile e4626b14-grunt-contrib-contrib grunt-contrib-contrib@
+87 silly lockFile e4626b14-grunt-contrib-contrib grunt-contrib-contrib@
+88 http 200 https://registry.npmjs.org/grunt-contrib-clean
+89 silly registry.get cb [ 200,
+89 silly registry.get   { date: 'Wed, 15 Oct 2014 15:23:22 GMT',
+89 silly registry.get     server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
+89 silly registry.get     etag: '"5OHEBSZ3GOBG0CX88ZQU4CRWJ"',
+89 silly registry.get     'content-type': 'application/json',
+89 silly registry.get     'cache-control': 'max-age=60',
+89 silly registry.get     'content-length': '23410',
+89 silly registry.get     'accept-ranges': 'bytes',
+89 silly registry.get     via: '1.1 varnish',
+89 silly registry.get     age: '40',
+89 silly registry.get     'x-served-by': 'cache-fra1248-FRA',
+89 silly registry.get     'x-cache': 'HIT',
+89 silly registry.get     'x-cache-hits': '1',
+89 silly registry.get     'x-timer': 'S1413386602.994572,VS0,VE0',
+89 silly registry.get     vary: 'Accept',
+89 silly registry.get     'keep-alive': 'timeout=10, max=50',
+89 silly registry.get     connection: 'Keep-Alive' } ]
+90 silly addNameRange number 2 { name: 'grunt-contrib-clean', range: '*', hasData: true }
+91 silly addNameRange versions [ 'grunt-contrib-clean',
+91 silly addNameRange   [ '0.1.0',
+91 silly addNameRange     '0.2.0',
+91 silly addNameRange     '0.3.0',
+91 silly addNameRange     '0.3.1',
+91 silly addNameRange     '0.3.2',
+91 silly addNameRange     '0.4.0',
+91 silly addNameRange     '0.4.1',
+91 silly addNameRange     '0.5.0',
+91 silly addNameRange     '0.6.0',
+91 silly addNameRange     '0.4.0-a',
+91 silly addNameRange     '0.4.0-rc5',
+91 silly addNameRange     '0.4.0-rc6' ] ]
+92 verbose addNamed [ 'grunt-contrib-clean', '0.6.0' ]
+93 verbose addNamed [ '0.6.0', '0.6.0' ]
+94 silly lockFile 0a668ef6-grunt-contrib-clean-0-6-0 grunt-contrib-clean@0.6.0
+95 verbose lock grunt-contrib-clean@0.6.0 /Users/jules/.npm/0a668ef6-grunt-contrib-clean-0-6-0.lock
+96 silly lockFile a195317b-an-grunt-contrib-clean-0-6-0-tgz https://registry.npmjs.org/grunt-contrib-clean/-/grunt-contrib-clean-0.6.0.tgz
+97 verbose lock https://registry.npmjs.org/grunt-contrib-clean/-/grunt-contrib-clean-0.6.0.tgz /Users/jules/.npm/a195317b-an-grunt-contrib-clean-0-6-0-tgz.lock
+98 verbose addRemoteTarball [ 'https://registry.npmjs.org/grunt-contrib-clean/-/grunt-contrib-clean-0.6.0.tgz',
+98 verbose addRemoteTarball   'f532dba4b8212674c7c013e146bda6638b9048f6' ]
+99 info retry fetch attempt 1 at 17:23:26
+100 verbose fetch to= /tmp/npm-1773-_06m1smN/registry.npmjs.org/grunt-contrib-clean/-/grunt-contrib-clean-0.6.0.tgz
+101 http GET https://registry.npmjs.org/grunt-contrib-clean/-/grunt-contrib-clean-0.6.0.tgz
+102 http 200 https://registry.npmjs.org/grunt-contrib-clean/-/grunt-contrib-clean-0.6.0.tgz
+103 silly lockFile a195317b-an-grunt-contrib-clean-0-6-0-tgz https://registry.npmjs.org/grunt-contrib-clean/-/grunt-contrib-clean-0.6.0.tgz
+104 silly lockFile a195317b-an-grunt-contrib-clean-0-6-0-tgz https://registry.npmjs.org/grunt-contrib-clean/-/grunt-contrib-clean-0.6.0.tgz
+105 silly lockFile 0a668ef6-grunt-contrib-clean-0-6-0 grunt-contrib-clean@0.6.0
+106 silly lockFile 0a668ef6-grunt-contrib-clean-0-6-0 grunt-contrib-clean@0.6.0
+107 silly lockFile 8bff91c3-grunt-contrib-clean grunt-contrib-clean@
+108 silly lockFile 8bff91c3-grunt-contrib-clean grunt-contrib-clean@
+109 error 404 404 Not Found: grunt-contrib-contrib
+109 error 404
+109 error 404 'grunt-contrib-contrib' is not in the npm registry.
+109 error 404 You should bug the author to publish it
+109 error 404 It was specified as a dependency of 'FJS'
+109 error 404
+109 error 404 Note that you can also install from a
+109 error 404 tarball, folder, or http url, or git url.
+110 error System Darwin 13.4.0
+111 error command "node" "/usr/local/bin/npm" "install" "grunt-contrib-connect" "grunt-contrib-clean" "grunt-contrib-contrib" "--save"
+112 error cwd /Users/jules/master2/FJS
+113 error node -v v0.10.32
+114 error npm -v 1.4.28
+115 error code E404
+116 verbose exit [ 1, true ]

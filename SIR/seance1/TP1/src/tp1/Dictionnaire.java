@@ -11,7 +11,6 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Map;
 
 /**
  *
@@ -21,11 +20,15 @@ public class Dictionnaire {
     private List<User> users;
     private List<Theme> themes;
     private List<Liaison> liaisons;
+    private List<Liaison> liaisonsTRU;
+    private List<Couple> couples;
     
     public Dictionnaire(){
         this.users = new ArrayList();
         this.themes = new ArrayList();
         this.liaisons = new ArrayList();
+        this.liaisonsTRU = new ArrayList();
+        this.couples = new ArrayList();
     }
 
     public List<User> getUsers() {
@@ -120,6 +123,70 @@ public class Dictionnaire {
         return 1;
     }
     
+    public boolean coupleExiste(Theme theme1, Theme theme2){
+        for(Couple c : this.couples){
+            if(c.getTheme1() == theme1){
+                if(c.getTheme2() == theme2){
+                    return true;
+                }
+            }
+            if(c.getTheme1() == theme2){
+                if(c.getTheme2() == theme1){
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
+    
+    public boolean liaisonTRUExiste(User u, Theme theme){
+        for(Liaison l : this.liaisonsTRU){
+            if(l.getTheme() == theme && l.getUser() == u){
+                return true;
+            }
+        }
+        return false;
+    }
+    
+    public Theme coupleExisteWithAnotherTheme(Theme theme){
+        for(Couple c : this.couples){
+            if(c.getTheme1() == theme){
+                return c.getTheme2();
+            }
+            if(c.getTheme2() == theme){
+                return c.getTheme1();
+            }
+        }
+        return null;
+    }
+    
+    public void matriceUsagerTheme(){
+        Liaison l = null;
+        System.out.print("\t\t");
+        for(Theme t : this.getThemes()){
+            System.out.print(t.getName());
+            System.out.print("\t");
+        }
+        System.out.println("");
+        for(User u : this.getUsers()){
+            System.out.print(u.getName());
+            if(u.getName().length() < 8){
+                System.out.print("\t");
+            }
+            System.out.print("\t");
+            for(Theme t : this.getThemes()){
+                if((l = this.getLiaison(u, t)) != null){
+                    System.out.print(l.getCpt());
+                }
+                else{
+                    System.out.print("0");
+                }
+                System.out.print("\t\t");
+            }
+            System.out.println();
+        }
+    }
+    
     public void matriceDistanceEntreUsager(){
         float distance;
         int intersection;
@@ -176,6 +243,35 @@ public class Dictionnaire {
         System.out.println("###########################################################################################");
     }
     
+    public void ecrireMatriceUsagersThemes(String nom){
+        Liaison l = null;
+        try{
+            FileWriter fw = new FileWriter(nom, false);
+            BufferedWriter output = new BufferedWriter(fw);
+            for(int i=0; i<this.getUsers().size(); i++){
+                for(int j=0; j<this.getThemes().size(); j++){
+                    if((l = this.getLiaison(this.users.get(i), this.themes.get(j))) != null){
+                        output.write(String.valueOf(l.getCpt()));
+                    }
+                    else{
+                        output.write("0");
+                    }
+                    if(j<(this.getThemes().size()-1)){
+                        output.write(";");
+                    }
+                }
+                output.write("\n");
+                output.flush();
+            }
+            output.flush();
+            output.close();
+        }
+        catch(IOException ioe){
+            System.out.print("Erreur : ");
+            ioe.printStackTrace();
+        }
+    }
+    
     public void ecrireMatriceDistanceEntreUsagerFichier(String nom){
         float distance;
         int intersection;
@@ -221,6 +317,97 @@ public class Dictionnaire {
                 output.write("\n");
                 output.flush();
             }
+            output.close();
+        }
+        catch(IOException ioe){
+            System.out.print("Erreur : ");
+            ioe.printStackTrace();
+        }
+    }
+    
+    public void ecrireMatriceDistanceEntreThemesFichier(String nom){
+        float distance;
+        int intersection;
+        int union;
+        int tmp1;
+        int tmp2;
+        try{
+            FileWriter fw = new FileWriter(nom, false);
+            BufferedWriter output = new BufferedWriter(fw);
+            output.write("*Vertices " + this.themes.size() + "\n");
+            output.flush();
+            for(int i=0; i<this.themes.size(); i++){
+                output.write((i+1) + " \"" + this.themes.get(i).getName() + "\"" + "\n");
+                output.flush();
+            }
+            output.write("*Matrix" + "\n");
+            output.flush();
+            for(int i=0; i<this.themes.size(); i++){
+                for(int j=0; j<this.themes.size(); j++){
+                    intersection = 0;
+                    union = 0;
+                    for(User u : this.getUsers()){
+                        tmp1 = this.getCptOfLiaison(u, this.themes.get(i));
+                        tmp2 = this.getCptOfLiaison(u, this.themes.get(j));
+                        if(tmp1 >= tmp2){
+                            intersection += tmp2;
+                            union += tmp1;
+                        }
+                        if(tmp1 < tmp2){
+                            intersection += tmp1;
+                            union += tmp2;
+                        }
+                    }
+                    distance = 1 - (((float)intersection)/union);
+                    if(distance < 0.5){
+                        if(!this.coupleExiste(this.themes.get(i), this.themes.get(j))){
+                            this.couples.add(new Couple(this.themes.get(i), this.themes.get(j)));
+                        }
+                        output.write("1");
+                    }
+                    else{
+                        output.write("0");
+                    }
+                    output.write(" ");
+                }
+                output.write("\n");
+                output.flush();
+            }
+            output.close();
+        }
+        catch(IOException ioe){
+            System.out.print("Erreur : ");
+            ioe.printStackTrace();
+        }
+    }
+    
+    public void ecrireMatriceUsagersThemesRecommandes(String nom){
+        Liaison l = null;
+        Theme tmp = null;
+        try{
+            FileWriter fw = new FileWriter(nom, false);
+            BufferedWriter output = new BufferedWriter(fw);
+            for(int i=0; i<this.getUsers().size(); i++){
+                for(int j=0; j<this.getThemes().size(); j++){
+                    if((l = this.getLiaison(this.users.get(i), this.themes.get(j))) != null){
+                        if((tmp = this.coupleExisteWithAnotherTheme(this.themes.get(j)))!=null){
+                            this.liaisonsTRU.add(new Liaison(this.users.get(i), tmp, 1));
+                        }
+                    }
+                    if(this.liaisonTRUExiste(this.users.get(i), this.themes.get(j))){
+                        output.write("1");
+                    }
+                    else{
+                        output.write("0");
+                    }
+                    if(j<(this.getThemes().size()-1)){
+                        output.write(";");
+                    }
+                }
+                output.write("\n");
+                output.flush();
+            }
+            output.flush();
             output.close();
         }
         catch(IOException ioe){

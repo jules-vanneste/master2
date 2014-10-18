@@ -21,9 +21,19 @@ public class TP1 {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
+        Dictionnaire dictionnaire = new Dictionnaire();
+        lecture(dictionnaire);
+        dictionnaire.matriceUsagerTheme();
+        dictionnaire.matriceDistanceEntreUsager();
+        dictionnaire.ecrireMatriceUsagersThemes("matrice_usagers_themes.txt");
+        dictionnaire.ecrireMatriceDistanceEntreUsagerFichier("matrice_usagers.txt");
+        dictionnaire.ecrireMatriceDistanceEntreThemesFichier("matrice_themes.txt");
+        dictionnaire.ecrireMatriceUsagersThemesRecommandes("matrice_usagers_themes_recommandes.txt");
+    }
+    
+    public static void lecture(Dictionnaire dictionnaire){
         String infos[];
         String fichier = "log.txt";
-        Dictionnaire dictionnaire = new Dictionnaire();
         
         try {
             InputStream ips = new FileInputStream(fichier);
@@ -41,34 +51,6 @@ public class TP1 {
         } catch (IOException e) {
             System.out.println(e.toString());
         }
-        
-        Liaison l = null;
-        System.out.print("\t\t");
-        for(Theme t : dictionnaire.getThemes()){
-            System.out.print(t.getName());
-            System.out.print("\t");
-        }
-        System.out.println("");
-        for(User u : dictionnaire.getUsers()){
-            System.out.print(u.getName());
-            if(u.getName().length() < 8){
-                System.out.print("\t");
-            }
-            System.out.print("\t");
-            for(Theme t : dictionnaire.getThemes()){
-                if((l = dictionnaire.getLiaison(u, t)) != null){
-                    System.out.print(l.getCpt());
-                }
-                else{
-                    System.out.print("0");
-                }
-                System.out.print("\t\t");
-            }
-            System.out.println();
-        }
-        
-        dictionnaire.matriceDistanceEntreUsager();
-        dictionnaire.ecrireMatriceDistanceEntreUsagerFichier("resultat.txt");
     }
 
 }

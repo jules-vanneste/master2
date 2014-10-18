@@ -1,0 +1,12 @@
+*Vertices 5
+1 "Photo-video"
+2 "informatique"
+3 "jardinage"
+4 "sport"
+5 "bricolage"
+*Matrix
+1 0 0 0 0 
+0 1 0 0 0 
+0 0 1 0 1 
+0 0 0 1 0 
+0 0 1 0 1 
