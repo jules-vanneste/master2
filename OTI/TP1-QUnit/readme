@@ -1,0 +1,17 @@
+Etudiant :
+	VANNESTE Jules 
+
+Sujet :
+	OTI : TP1 - Tests avec QUnit
+
+Etat: 
+	Fini :
+		- TP1-js/money_js/test/money_test.html : OK
+		- TP1-js/money_js/test/money_ops_test.html : OK
+		- Etendre le testcase money_test : OK
+		- Créer des nouvelles opérations et les testcases correspondants : 
+			- soustraction (avec resultat négatif) : OK
+			- multiplication : OK
+			- division (avec division par 0) : OK
+		- Créer une Fabrique des Money qui permet de créer un ensemble prédéfini des devises : OK
+		- Prévoir des exceptions et ecrivez des tests pour garantir le bon fonctionnement de la fabrique : OK
