@@ -1,0 +1,20 @@
+Etudiant :
+	VANNESTE Jules 
+
+Sujet :
+	OTI : TP2 - Tests avec fixtures
+
+Etat: 
+	- Construisez un test qui vérifie que le message "Devises incompatibles ... " s'affiche, lorsque les devises ne sont pas compatibles : OK
+	- Modifiez les fichiers (index.html, calc.js) pour supporter également l'opération de soustraction implémentée précédemment : OK
+	- Créez également des nouveaux tests (selon le modèle calc_test.js) pour couvrir cette nouvelle opération  : OK
+	- Modifiez le code javascript fourni de telle sorte à ce que cela généré une alerte (window.alert) lorsque l'opération n'est pas réalisable : OK
+	- Ecrivez des tests pour valider que les alertes sont bien déclenchées : OK
+	- Que se passe-t-il lorsque vous demandez d'ajouter des moneys dont soit la valeur, soit la currency ne respectent pas les contraintes imposées ? :
+		- Money avec value < 0 : 
+			Died on test #1 @file:///Users/jules/master2/OTI/TP2-QUnit/money_js/test/calc_test.js:166:1 : Money < 0: -2
+		- Currency > 3 caractères :
+			Died on test #1 @file:///Users/jules/master2/OTI/TP2-QUnit/money_js/test/calc_test.js:145:1 : Currency Superieur a 3 caracteres : 2
+	- Modifiez le code calc.js pour prendre en compte les éventuelles modifications : OK
+	- Ecrivez des tests pour couvrir les nouveaux cas de figure identifiés : OK
+	
